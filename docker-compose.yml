@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    build: ./
+    environment:
+      - PYTHONBUFFERED=1
+    ports:
+      - "5000:5000"
+    links:
+      - db
+
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=my_user
+      - POSTGRES_PASSWORD=A*1CFF@db
+      - POSTGRES_DB=database
+    ports:
+      - "5432:5432"
+    
+volumes:
+  postgres_data:
