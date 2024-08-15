@@ -15,7 +15,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=my_user
-      - POSTGRES_PASSWORD=A*1CFF@db
+      - POSTGRES_PASSWORD='passwprd'@db
       - POSTGRES_DB=database
     ports:
       - "5432:5432"
